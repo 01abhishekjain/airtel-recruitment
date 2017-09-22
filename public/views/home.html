@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Airtel Recruitment</h1>
+        <p>Question 2: Data table</p>
+    </div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel tempora possimus perspiciatis veritatis, sit maxime consectetur eaque illo nemo delectus inventore odio itaque accusamus doloribus debitis iusto impedit dolorem obcaecati!</div>
+    <!-- <button type="button" class="btn btn-success" ng-click="getData()">REFRESH DATA</button> -->
+
+    <div class="table-responsive">
+        <table class="table table-striped" ng-if="users">
+            <thead ai-table-head>
+            </thead>
+
+            <tr ai-add-user></tr>
+            <tr ai-search-user></tr>
+
+            <tr ng-repeat="user in users | orderBy:order | filter:search">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address.street}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.website}}</td>
+                <td>{{user.company.name}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-xs" ng-click="editUser(user)">EDIT</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div ng-if="error">{{error}}</div>
+
+</div>
